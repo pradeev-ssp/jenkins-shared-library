@@ -6,7 +6,7 @@ def call(String imageName, String imageTag = "latest") {
     echo "========================================="
 
     // Using the Jenkins sh step to run Docker
-    sh "docker build -t ${imageName}:${imageTag} ."
+    bat "docker build -t ${imageName}:${imageTag} ."
     
     echo "========================================="
     echo " Docker Build Completed Successfully!    "

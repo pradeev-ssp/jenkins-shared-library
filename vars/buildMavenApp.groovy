@@ -12,7 +12,7 @@ def call(Map config = [:]) {
     echo "========================================="
 
     // The actual Jenkins pipeline step
-    sh "mvn ${mavenGoals}"
+    bat "mvn ${mavenGoals}"
     
     echo "========================================="
     echo " Maven Build Completed Successfully!     "
