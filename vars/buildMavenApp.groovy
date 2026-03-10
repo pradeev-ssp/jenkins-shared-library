@@ -14,7 +14,7 @@ def call(Map config = [:]) {
     def mvnHome = tool 'M3'
 
     // Use that exact path to run the command
-    bat "${mvnHome}\\bin\\mvn ${mavenGoals}"
+    bat "\"${mvnHome}\\bin\\mvn.cmd\" ${mavenGoals}"
     
     echo "========================================="
     echo " Maven Build Completed Successfully!     "
