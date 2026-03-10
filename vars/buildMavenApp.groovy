@@ -10,9 +10,11 @@ def call(Map config = [:]) {
     echo "========================================="
     echo " Starting Maven Build via Shared Library "
     echo "========================================="
+// The DevOps Fix: Ask Jenkins to provide the Maven installation path
+    def mvnHome = tool 'M3'
 
-    // The actual Jenkins pipeline step
-    bat "mvn ${mavenGoals}"
+    // Use that exact path to run the command
+    bat "${mvnHome}\\bin\\mvn ${mavenGoals}"
     
     echo "========================================="
     echo " Maven Build Completed Successfully!     "
